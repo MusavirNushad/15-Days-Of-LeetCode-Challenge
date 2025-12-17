@@ -1,3 +1,4 @@
+import heapq
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
@@ -11,7 +12,7 @@ class Solution:
                 mp[num] += 1
         
     
-        result = sorted(mp, key= mp.get, reverse = True)[:k]
+        result = heapq.nlargest(k, mp, key = mp.get)
         return result
         
 
