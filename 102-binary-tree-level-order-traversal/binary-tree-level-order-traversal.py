@@ -9,7 +9,7 @@ class Solution:
 
         if not root:
             return []
-        
+
         result = []
         q = deque([root])
 
@@ -18,18 +18,14 @@ class Solution:
             size = len(q)
 
             for _ in range(size):
-                node = q.popleft()
-                level.append(node.val)
+                Node = q.popleft()
+                level.append(Node.val)
 
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-            
+                if Node.left:
+                    q.append(Node.left)
+                if Node.right:
+                    q.append(Node.right)
+                
             result.append(level)
-
+        
         return result
-
-
-
-
