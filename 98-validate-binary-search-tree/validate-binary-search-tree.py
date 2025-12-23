@@ -8,8 +8,7 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
 
         res = self.checkBST(root)
-        if res is None:
-            return True
+        
         for i in range(1,len(res)):
             if res[i-1] < res[i]:
                 continue
